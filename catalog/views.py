@@ -1,7 +1,11 @@
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
-from forms.py import RegisterForm
+from forms import RegisterForm
+from django.http import HttpResponse
 
+def index(request):
+    print(request)
+    return HttpResponse('DateSite Here')
 
 class RegisterView(TemplateView):
     template_name = "registration/register.html"
